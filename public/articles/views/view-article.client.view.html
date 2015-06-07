@@ -1,0 +1,10 @@
+<section data-ng-controller="ArticlesController" data-ng-init="findOne()">
+	<h1 data-ng-bind="article.title"></h1>
+	<div data-ng-show="article.creator._id === authentication.user.id">
+		<a href="/#!/articles/{{article._id}}/edit">edit</a>
+		<a href="#" data-ng-click="delete()">delete</a>
+	</div>
+	<small data-ng-bind="article.created | date:'mediumDate'"></small>
+	<small data-ng-bind="article.creator.fullName"></small>
+	<p data-ng-bind="article.content"></p>
+</section>
